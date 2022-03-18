@@ -12,6 +12,7 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_MainViewController', {
     onChange: function (datefield, newValue, oldValue, eOpts) {
         // console.log(newValue);
         var viewModel = this.getViewModel();
+        viewModel.set('current', newValue);
 
         var orgtypeid_link = viewModel.get('orgtypeid_link');
         var orgid_link = viewModel.get('orgid_link');
