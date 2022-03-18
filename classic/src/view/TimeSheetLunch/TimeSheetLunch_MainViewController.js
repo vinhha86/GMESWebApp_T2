@@ -29,8 +29,11 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_MainViewController', {
             viewModel.set('isToday', false);
         }
         
-        if (orgid_link != null)
+        if (orgid_link != null){
             this.checkStatus(orgid_link, newValue);
+        }
+
+        this.fireEvent('ChangeDate');
     },
     checkStatus: function (orgid_link, date) {
         var viewModel = this.getViewModel();

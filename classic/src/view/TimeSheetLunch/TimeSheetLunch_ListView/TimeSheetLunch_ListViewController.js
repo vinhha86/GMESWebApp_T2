@@ -70,14 +70,19 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
                 i--;
             }
         }
+
+        var TimeSheetLunch_MainView = Ext.getCmp('TimeSheetLunch_MainView');
+        if(TimeSheetLunch_MainView){
+            TimeSheetLunch_MainView.setLoading(true);
+        }
+
         var listtitle = [];
-        //   var listid = [];
         var params = new Object();
         params.orgid_link = data;
         params.is_ca_an = true;
         GSmartApp.Ajax.post('/api/v1/timesheetshifttypeorg/getbyorgid_link_caAn_All', Ext.JSON.encode(params),
             function (success, response, options) {
-                grid.setLoading(false);
+                
                 if (success) {
                     var response = Ext.decode(response.responseText);
                     if (response.respcode == 200) {
@@ -182,6 +187,18 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
 
                         m.loadTimesheetLunchStore();
                         m.setShiftColumnConfirm();
+
+                        // if(TimeSheetLunch_MainView){
+                        //     TimeSheetLunch_MainView.setLoading(false);
+                        // }
+                    }else{
+                        if(TimeSheetLunch_MainView){
+                            TimeSheetLunch_MainView.setLoading(false);
+                        }
+                    }
+                }else{
+                    if(TimeSheetLunch_MainView){
+                        TimeSheetLunch_MainView.setLoading(false);
                     }
                 }
             })
@@ -206,7 +223,6 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
                 if (success) {
                     var response = Ext.decode(response.responseText);
                     var data = response.data;
-                    // console.log(data);
 
                     var sumFieldContainer = me.down('#sumFieldContainer');
                     var textfields = sumFieldContainer.items.items;
@@ -232,11 +248,6 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
                             }
                         }
                     }
-                    
-                    // if (viewModel.get('isCa30Confirm') == true)
-                    //     TimeSheetLunch_MainView.down('#sumCa30').setFieldStyle('background-color: lightblue;');
-                    // else
-                    //     TimeSheetLunch_MainView.down('#sumCa30').setFieldStyle('background-color: white;');
                 }
             })
     },
@@ -248,12 +259,21 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
         var TimeSheetLunch_MainView = Ext.getCmp('TimeSheetLunch_MainView');
         var date = TimeSheetLunch_MainView.down('#txtdatefield').getValue();
         var orgid_link = viewModel.get('orgid_link');
+        
+        // var TimeSheetLunch_MainView = Ext.getCmp('TimeSheetLunch_MainView');
+        // if(TimeSheetLunch_MainView){
+        //     TimeSheetLunch_MainView.setLoading(true);
+        // }
 
         var TimeSheetLunchStore = viewModel.getStore('TimeSheetLunchStore');
         TimeSheetLunchStore.loadStore_async(orgid_link, date);
         TimeSheetLunchStore.load({
             scope: TimeSheetLunchStore,
             callback: function(records, operation, success) {
+                var TimeSheetLunch_MainView = Ext.getCmp('TimeSheetLunch_MainView');
+                if(TimeSheetLunch_MainView){
+                    TimeSheetLunch_MainView.setLoading(false);
+                }
                 if(!success){
                     // this.fireEvent('logout');
                 } else {
@@ -272,10 +292,6 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
         var TimeSheetLunchStore = viewModel.getStore('TimeSheetLunchStore');
         var columns = me.getColumns();
 
-        // console.log(records);
-        // console.log(columns);
-
-        // var storeData = new Array();
         for(var i=0;i<records.length;i++){
             var record = records[i];
             var timesheet_shift_id_list = record.get('timesheet_shift_id_list');
@@ -293,7 +309,6 @@ Ext.define('GSmartApp.view.TimeSheetLunch.TimeSheetLunch_ListViewController', {
         }
         // TimeSheetLunchStore.setData(storeData)
         TimeSheetLunchStore.commitChanges();
-
         m.sumInfo();
     },
 

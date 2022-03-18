@@ -11,23 +11,37 @@ Ext.define('GSmartApp.view.personel.BaoCaoBaoAn.ChitietTabViewController', {
             'TimeSheetLunch_ListOrgViewController': {
                 'SelectOrg': 'onSelectOrg'
             },
-            // 'TimeSheetLunch_ListOrgViewController': {
-            //     'SelectOrg': 'onSelectOrg'
-            // }
+            'TimeSheetLunch_MainViewController': {
+                'ChangeDate': 'onChangeDate'
+            }
         }
     },
     onSelectOrg: function (record) {
-        var viewmodel = this.getViewModel();
-        viewmodel.set('orgid_link', record.get('id'));
+        var viewModel = this.getViewModel();
+        viewModel.set('orgid_link', record.get('id'));
         if (record.get('orgtypeid_link') == 13) {
-            viewmodel.set('isHidden_khach', false);
-            var storeKhach = viewmodel.getStore('TimeSheetLunchKhachStore');
-            var orgid_link = viewmodel.get('orgid_link');
-            var date = viewmodel.get('current');
+            viewModel.set('isHidden_khach', false);
+            var storeKhach = viewModel.getStore('TimeSheetLunchKhachStore');
+            var orgid_link = viewModel.get('orgid_link');
+            var date = viewModel.get('current');
             storeKhach.loadStore(orgid_link, date);
         }
         else
-            viewmodel.set('isHidden_khach', true);
+            viewModel.set('isHidden_khach', true);
 
+    },
+    onChangeDate: function(){
+        var m = this;
+        var me = this.getView();
+        var viewModel = this.getViewModel();
+        var date = viewModel.get('current');
+
+        var orgtypeid_link = viewModel.get('orgtypeid_link');
+        var orgid_link = viewModel.get('orgid_link');
+
+        if (orgtypeid_link == 13) {
+            var storeKhach = viewModel.getStore('TimeSheetLunchKhachStore');
+            storeKhach.loadStore(orgid_link, date);
+        }
     }
 })
