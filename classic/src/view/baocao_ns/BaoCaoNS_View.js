@@ -221,6 +221,13 @@ Ext.define('GSmartApp.view.baocao_ns.BaoCaoNS_View', {
                     iconCls: 'x-fa fa-refresh',
                     itemId: 'btnRefresh',
                 },
+                {
+                    xtype: 'button',
+                    text: 'Excel',
+                    iconCls: 'x-fa fa-file-excel-o',
+                    margin: 5,
+                    handler: 'onExport_Excel'
+                },
             ]
         }, 
     ]
