@@ -43,14 +43,16 @@ Ext.define("GSmartApp.view.DashBoardView.DashBoardMainView", {
             layout: "hbox",
             items: [
                 {
-                    xtype: "PContractChartView",
+                    // xtype: "PContractChartView",
+                    xtype: "PCChart",
                     border: true,
                     margin: 1,
                     height: "100%",
                     flex: 3,
                 },
                 {
-                    xtype: "LineChartRegisterCodeCount",
+                    // xtype: "LineChartRegisterCodeCount",
+                    xtype: "RCCChart",
                     border: true,
                     margin: 1,
                     height: "100%",
