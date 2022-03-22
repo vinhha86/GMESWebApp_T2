@@ -284,6 +284,9 @@ Ext.define('GSmartApp.view.personel.Personnel_info_main_ViewController', {
                             fn: function () {
                                 viewmodel.set('personnel.id', response.id);
                                 viewmodel.set('personnel.bike_number', response.bike_number);
+                                
+                                var store = viewmodel.getStore('PersonnelHis_Store');
+                                store.load();
                             }
                         });
                     }
