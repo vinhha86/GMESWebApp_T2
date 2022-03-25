@@ -253,6 +253,7 @@ Ext.define('GSmartApp.view.pcontract.PContractViewController', {
         params.data = data;
         params.msgtype = "PContract_CREATE";
         params.message = "Tạo đơn hàng";
+        params.markettypeArray = viewmodel.get('markettypeArray');
 
         GSmartApp.Ajax.post('/api/v1/pcontract/create', Ext.JSON.encode(params),
             function (success, response, options) {

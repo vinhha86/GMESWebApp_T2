@@ -162,6 +162,7 @@ Ext.define('GSmartApp.view.pcontract.PContractViewModel', {
         },		
     },
     data: {
+        markettypeArray: new Array(),
         titleAttvalue: 'Thuộc tính ',
         titleDoccument: 'Tài liệu ',
         titleDeliveryPlan: 'Kế hoạch giao hàng ',

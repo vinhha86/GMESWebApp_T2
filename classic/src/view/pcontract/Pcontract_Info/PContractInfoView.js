@@ -66,21 +66,44 @@ Ext.define('GSmartApp.view.PContract.PContractInfoView', {
                     labelWidth: 100,
                     flex: 1
                 },
+                // {
+                //     xtype: 'combo',
+                //     margin: 2,
+                //     fieldLabel: "Thị trường:",
+                //     itemId: 'market',
+                //     blankText: 'Không được để trống',
+                //     bind: {
+                //         store: '{MarketStore}',
+                //         value: '{PContract.marketypeid_link}'
+                //     },
+                //     displayField: 'name',
+                //     valueField: 'id',
+                //     labelWidth: 100,
+                //     flex: 1
+                // }  
                 {
-                    xtype: 'combo',
-                    margin: 2,
+                    xtype:'combobox',
+                    itemId:'market',
                     fieldLabel: "Thị trường:",
-                    itemId: 'market',
-                    blankText: 'Không được để trống',
-                    bind: {
-                        store: '{MarketStore}',
-                        value: '{PContract.marketypeid_link}'
+                    labelWidth: 100,
+                    bind:{
+                        store:'{MarketStore}',
+                        // value: '{PContract.marketypeid_link}'
+                        value: '{markettypeArray}'
                     },
                     displayField: 'name',
                     valueField: 'id',
-                    labelWidth: 100,
-                    flex: 1
-                }           
+                    // value: [0,1,2],
+                    queryMode: 'local',
+                    anyMatch: true,
+                    editable: true,
+                    allowBlank: true,
+                    multiSelect: true,
+                    // emptyText: 'Trạng thái',
+                    margin: 2,
+                    // width: 130
+                    flex: 1,
+                }         
                 // {
                 //     xtype: 'datefield',
                 //     margin: 2,
