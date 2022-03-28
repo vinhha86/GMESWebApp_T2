@@ -56,11 +56,7 @@ Ext.define('GSmartApp.view.baocao_ns.BaoCaoNS_ViewController', {
         params.date = date;
         console.log(params);
 
-        // return;
-        // params.year = viewmodel.get('timesheetdaily.year');
-        // params.orgid_link = viewmodel.get('timesheetdaily.orgid_link');
-        // params.grantid_link = viewmodel.get('timesheetdaily.grantid_link');
-        // params.personnel_code = viewmodel.get('timesheetdaily.personnel_code');
+
 
         // if (null != params.grantid_link){
             grid.setLoading("Đang tính dữ liệu");

@@ -158,6 +158,66 @@ Ext.define('GSmartApp.view.TimeSheetInOut.TongHopCong.CongThangViewController', 
                 }
             }, 1000 * 60 * 5)
     },
+    onExport_Excel_2:function() {
+        var me = this;
+        var grid = this.getView();
+        var viewmodel = this.getViewModel();
+        var orgid_link = viewmodel.get('timesheetmonth.orgid_link');
+        var orgid_name = viewmodel.get('timesheetmonth.orgid_name');
+        console.log(orgid_name);
+        if (orgid_link == 0 || orgid_link == null) {
+            Ext.MessageBox.show({
+                title: "Thông báo",
+                msg: 'Bạn chưa chọn đơn vị',
+                buttons: Ext.MessageBox.YES,
+                buttonText: {
+                    yes: 'Đóng',
+                }
+            });
+            return;
+        }
+
+        grid.setLoading("Đang tính dữ liệu");
+        var params = new Object();
+        params.orgid_link = orgid_link;
+        let month = viewmodel.get('timesheetmonth.month');
+        let year = viewmodel.get('timesheetmonth.year');
+        console.log(year);
+        params.month = viewmodel.get('timesheetmonth.month');
+        params.year = viewmodel.get('timesheetmonth.year');
+        var fileName = "BaoCaoCong" +"_" +month+"-"+year+ ".xlsx";
+        GSmartApp.Ajax.post('/api/v1/timesheetinout/exportExcelBaoCao_Cong', Ext.JSON.encode(params),
+        function (success, response, options) {
+            grid.setLoading(false);
+            if (success) {
+                var response = Ext.decode(response.responseText);
+                if (response.respcode == 200) {
+                    me.saveByteArray(fileName, response.data);
+                }
+                else {
+                    Ext.Msg.show({
+                        title: 'Thông báo',
+                        msg: 'Lưu thất bại',
+                        buttons: Ext.MessageBox.YES,
+                        buttonText: {
+                            yes: 'Đóng',
+                        }
+                    });
+                }
+
+            } else {
+                Ext.Msg.show({
+                    title: 'Thông báo',
+                    msg: 'Lưu thất bại',
+                    buttons: Ext.MessageBox.YES,
+                    buttonText: {
+                        yes: 'Đóng',
+                    }
+                });
+            }
+        })
+
+    },
     saveByteArray: function (reportName, byte) {
         var me = this;
         byte = this.base64ToArrayBuffer(byte);
