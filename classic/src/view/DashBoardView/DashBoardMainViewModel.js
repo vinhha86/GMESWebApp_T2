@@ -1,46 +1,53 @@
-Ext.define('GSmartApp.view.DashBoardView.DashBoardMainViewModel', {
-    extend: 'Ext.app.ViewModel',
-    alias: 'viewmodel.DashBoardMainViewModel',
+Ext.define("GSmartApp.view.DashBoardView.DashBoardMainViewModel", {
+    extend: "Ext.app.ViewModel",
+    alias: "viewmodel.DashBoardMainViewModel",
     requires: [
-        'GSmartApp.store.DashBoardView.BarChartOutputAmountStore',
-        'GSmartApp.store.DashBoardView.LineChartPackStockedAmountStore',
-        'GSmartApp.store.DashBoardView.BarChartNotInProductionStore',
-        'GSmartApp.store.DashBoardView.PieChartMarketTypeStore',
-        'GSmartApp.store.DashBoardView.LineChartRegisterCodeCountStore',
-        'GSmartApp.store.DashBoardView.POrderStatusChartStore',
-        'GSmartApp.store.pcontract.PContractChartStore',
+        "GSmartApp.store.DashBoardView.BarChartOutputAmountStore",
+        "GSmartApp.store.DashBoardView.LineChartPackStockedAmountStore",
+        "GSmartApp.store.DashBoardView.BarChartNotInProductionStore",
+        "GSmartApp.store.DashBoardView.PieChartMarketTypeStore",
+        "GSmartApp.store.DashBoardView.LineChartRegisterCodeCountStore",
+        "GSmartApp.store.DashBoardView.POrderStatusChartStore",
+        "GSmartApp.store.pcontract.PContractChartStore",
     ],
     stores: {
         BarChartOutputAmountStore: {
-            type: 'BarChartOutputAmountStore'
+            type: "BarChartOutputAmountStore",
         },
         LineChartPackStockedAmountStore: {
-            type: 'LineChartPackStockedAmountStore'
+            type: "LineChartPackStockedAmountStore",
         },
         BarChartNotInProductionStore: {
-            type: 'BarChartNotInProductionStore'
+            type: "BarChartNotInProductionStore",
         },
         PieChartMarketTypeStore: {
-            type: 'PieChartMarketTypeStore'
+            type: "PieChartMarketTypeStore",
         },
         LineChartRegisterCodeCountStore: {
-            type: 'LineChartRegisterCodeCountStore'
+            type: "LineChartRegisterCodeCountStore",
         },
         POrderStatusChartStore: {
-            type: 'POrderStatusChartStore'
+            type: "POrderStatusChartStore",
         },
         PContractChartStore: {
-            type: 'PContractChartStore'
+            type: "PContractChartStore",
         },
         YearStore: {
-            data: [{
-                id: (new Date().getFullYear()) - 1, name: (new Date().getFullYear()) - 1
-            }, {
-                id: (new Date().getFullYear()), name: (new Date().getFullYear())
-            }, {
-                id: (new Date().getFullYear()) + 1, name: (new Date().getFullYear()) + 1
-            }]
-        }
+            data: [
+                {
+                    id: new Date().getFullYear() - 1,
+                    name: new Date().getFullYear() - 1,
+                },
+                {
+                    id: new Date().getFullYear(),
+                    name: new Date().getFullYear(),
+                },
+                {
+                    id: new Date().getFullYear() + 1,
+                    name: new Date().getFullYear() + 1,
+                },
+            ],
+        },
     },
     data: {
         isPOrderStatusChart_Grid_Show: true,
@@ -49,23 +56,21 @@ Ext.define('GSmartApp.view.DashBoardView.DashBoardMainViewModel', {
         captions: null,
         year: new Date().getFullYear(),
         type: {
-            type: 0
-        }
+            type: 0,
+        },
     },
     formulas: {
         title: function (data) {
             var title = new Object();
             title.title = new Object();
-            if (data('type.type') == 0) {
-                title.title.text = 'Số lượng sản phẩm chưa có định mức';
-            }
-            else if (data('type.type') == 1) {
-                title.title.text = 'Chào giá chưa có PO Line';
-            }
-            else {
-                title.title.text = 'PO Line chưa Maps';
+            if (data("type.type") == 0) {
+                title.title.text = "Số lượng sản phẩm chưa có định mức";
+            } else if (data("type.type") == 1) {
+                title.title.text = "Chào giá chưa có PO Line";
+            } else {
+                title.title.text = "PO Line chưa Maps";
             }
             return title;
-        }
-    }
-})
+        },
+    },
+});
