@@ -98,13 +98,22 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
     },
     {
         text: 'Thị trường',
-        dataIndex: 'marketTypeName',
+        dataIndex: 'marketTypeString',
         width: 70,
         renderer: function (value, metaData, record, rowIdx, colIdx, store) {
             metaData.tdAttr = 'data-qtip="' + value + '"';
             return value;
         }
     },
+    // {
+    //     text: 'Thị trường',
+    //     dataIndex: 'marketTypeName',
+    //     width: 70,
+    //     renderer: function (value, metaData, record, rowIdx, colIdx, store) {
+    //         metaData.tdAttr = 'data-qtip="' + value + '"';
+    //         return value;
+    //     }
+    // },
     // {
     //     text: 'PO Buyer',
     //     dataIndex: 'polist',
