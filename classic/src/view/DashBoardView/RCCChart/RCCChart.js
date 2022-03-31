@@ -18,20 +18,16 @@ Ext.define("GSmartApp.view.DashBoardView.RCCChart.RCCChart", {
 
             items: [
                 {
-                    xtype: "combo",
+                    xtype: "datefield",
 
-                    fieldLabel: "Năm",
+                    labelWidth: 0,
 
-                    bind: {
-                        store: "{YearStore}",
-                        value: "{currentYear}",
-                    },
+                    emptyText: "Ngày",
 
-                    displayField: "name",
-                    valueField: "value",
-
-                    width: 120,
-                    labelWidth: 30,
+                    format: "d/m/Y",
+                    margin: "5 1 5 0",
+                    width: 130,
+                    enableKeyEvents: true,
                 },
                 {
                     xtype: "combo",
