@@ -28,6 +28,9 @@ Ext.define(
             "#exportExtraRiceData": {
                 click: "exportExtraRice",
             },
+            "#exportComCa": {
+                click: "exportComCa",
+            },
         },
         onloadDetail: function (grid, record, item, index, e, eOpts) {
             var viewModel = this.getViewModel();
@@ -907,6 +910,67 @@ Ext.define(
 
             GSmartApp.Ajax.post(
                 "/api/v1/timesheetlunch/exportExtraRice",
+                Ext.JSON.encode(params),
+                function (success, response, options) {
+                    detail.setLoading(false);
+
+                    if (!success) {
+                        Ext.Msg.show({
+                            title: "Thông báo",
+                            msg: "Lưu thất bại",
+                            button: Ext.MessageBox.YES,
+                            buttonText: {
+                                yes: "Đóng",
+                            },
+                        });
+                    }
+
+                    response = Ext.decode(response.responseText);
+
+                    if (response.respcode == 200) {
+                        me.saveByteArray(fileName, response.data);
+                    } else {
+                        Ext.Msg.show({
+                            title: "Thông báo",
+                            msg: "Lưu thất bại",
+                            buttons: Ext.MessageBox.YES,
+                            buttonText: {
+                                yes: "Đóng",
+                            },
+                        });
+                    }
+                }
+            );
+        },
+
+        exportComCa: function () {
+            var grid = this.getView();
+            var detail = grid.up("#TongHopBaoAnView");
+            var viewmodel = this.getViewModel();
+            var me = this;
+
+            var params = new Object();
+            params.orgid_link = viewmodel.get("orgid_link");
+            params.date_from = viewmodel.get("date_from");
+            params.date_to = viewmodel.get("date_to");
+
+            if (params.orgid_link == 0) {
+                Ext.MessageBox.show({
+                    title: "Thông báo",
+                    msg: "Chưa chọn đơn vị",
+                    button: Ext.MessageBox.YES,
+                    buttonText: {
+                        yes: "Đóng",
+                    },
+                });
+                return;
+            }
+
+            detail.setLoading("Đang tải dữ liệu");
+            var fileName = "ExportExtraRice.xlsx";
+
+            GSmartApp.Ajax.post(
+                "/api/v1/timesheetlunch/exportComCa",
                 Ext.JSON.encode(params),
                 function (success, response, options) {
                     detail.setLoading(false);
