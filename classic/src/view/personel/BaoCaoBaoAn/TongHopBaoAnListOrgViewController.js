@@ -784,7 +784,7 @@ Ext.define(
             }
 
             detail.setLoading("Đang tải dữ liệu");
-            var fileName = "ExportGuestRice.xlsx";
+            var fileName = "ComKhach.xlsx";
 
             GSmartApp.Ajax.post(
                 "/api/v1/timesheetlunch/exportGuestRice",
@@ -845,7 +845,7 @@ Ext.define(
             }
 
             detail.setLoading("Đang tải dữ liệu");
-            var fileName = "ExportRice.xlsx";
+            var fileName = "TongHopComCa.xlsx";
 
             GSmartApp.Ajax.post(
                 "/api/v1/timesheetlunch/exportRice",
@@ -906,7 +906,7 @@ Ext.define(
             }
 
             detail.setLoading("Đang tải dữ liệu");
-            var fileName = "ExportExtraRice.xlsx";
+            var fileName = "TongHopComTangCa.xlsx";
 
             GSmartApp.Ajax.post(
                 "/api/v1/timesheetlunch/exportExtraRice",
@@ -967,7 +967,7 @@ Ext.define(
             }
 
             detail.setLoading("Đang tải dữ liệu");
-            var fileName = "ExportExtraRice.xlsx";
+            var fileName = "ComCa.xlsx";
 
             GSmartApp.Ajax.post(
                 "/api/v1/timesheetlunch/exportComCa",
