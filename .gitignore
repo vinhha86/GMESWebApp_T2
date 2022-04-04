@@ -1,4 +1,12 @@
+.vscode/
+
 build/
 ext/
-bootstrap.css
+
+classic.json
+classic.jsonp
+
+modern.json
+modern.jsonp
+
 bootstrap.css
