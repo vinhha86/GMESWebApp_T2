@@ -2,7 +2,7 @@ Ext.define('GSmartApp.view.dashboard_khotp.Dashboard_KhoTP_Main', {
     extend: 'Ext.tab.Panel',
     xtype: 'Dashboard_KhoTP_Main',
     itemId:'Dashboard_KhoTP_Main',
-    // controller: 
+    controller: 'Dashboard_KhoTP_Main_Controller',
     viewModel: {
         type: 'Dashboard_KhoTP_POLine_ViewModel'
     },
