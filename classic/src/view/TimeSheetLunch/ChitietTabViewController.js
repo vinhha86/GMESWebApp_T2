@@ -34,7 +34,9 @@ Ext.define('GSmartApp.view.personel.BaoCaoBaoAn.ChitietTabViewController', {
         var m = this;
         var me = this.getView();
         var viewModel = this.getViewModel();
-        var date = viewModel.get('current');
+        // var date = viewModel.get('current');
+        var TimeSheetLunch_MainView = Ext.getCmp('TimeSheetLunch_MainView');
+        var date = TimeSheetLunch_MainView.down('#txtdatefield').getValue();
 
         var orgtypeid_link = viewModel.get('orgtypeid_link');
         var orgid_link = viewModel.get('orgid_link');
