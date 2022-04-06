@@ -52,8 +52,12 @@ Ext.define('GSmartApp.view.balance.Balance_D_Pcontract', {
 			dataIndex: 'mat_sku_color_name',
 			width: 150,
 			renderer: function (value, metaData, record, rowIdx, colIdx, store) {
-				metaData.tdAttr = 'data-qtip="' + value + '"';
-				return value == 'ALL' ? "" : value;
+				var mat_sku_demand_dh = record.get('mat_sku_demand_dh') == null ? 0 : record.get('mat_sku_demand_dh');
+				var mat_sku_stockin = record.get('mat_sku_stockin') == null ? 0 : record.get('mat_sku_stockin');
+				if(mat_sku_demand_dh > mat_sku_stockin) {
+					metaData.style = 'color: red';
+				}
+				return value;
 			}
 		},
 		{
