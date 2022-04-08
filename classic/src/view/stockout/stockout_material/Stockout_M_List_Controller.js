@@ -56,6 +56,30 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List_Controller', {
         '#btnXuatNoiBo': {
             click: 'onXuatDieuChuyenNoiBo'
         },
+        '#stockoutdate_from': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#stockoutdate_to': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#stockouttypeid': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#productString': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#maNplString': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#lotnumberString': {
+            keypress: 'ontxtfieldkeypress'
+        }
+    },
+    ontxtfieldkeypress: function(field, e) {
+        var m =this;
+        if(e.getKey() == e.ENTER) {
+            m.onSearch();
+        }
     },
     onXuatTo: function () {
         this.redirectTo('stockout_m/11/create');

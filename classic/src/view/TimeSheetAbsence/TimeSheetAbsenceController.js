@@ -67,6 +67,30 @@ Ext.define('GSmartApp.view.TimeSheetAbsence.TimeSheetAbsenceController', {
         },
         '#TimeSheetAbsence': {
             itemdblclick: 'onCapNhatdbl'
+        },
+        '#orgFactoryList': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#personnelCode': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#personnelName': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#datefrom': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#dateto': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#timeSheetAbsenceTypeList': {
+            keypress: 'ontxtfieldkeypress'
+        }
+    },
+    ontxtfieldkeypress: function(field, e) {
+        var m =this;
+        if(e.getKey() == e.ENTER) {
+            m.onloadPage();
         }
     },
     renderSum: function (value, summaryData, dataIndex) {

@@ -383,7 +383,8 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                 // value: new Date(),  // defaults to today
                 bind: {
                     value: '{searchObj.stockoutdate_from}',
-                }
+                },
+                enableKeyEvents : true
             },
             {
                 xtype: 'datefield',
@@ -396,7 +397,8 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                 // value: new Date(),  // defaults to today
                 bind: {
                     value: '{searchObj.stockoutdate_to}',
-                }
+                },
+                enableKeyEvents : true
             },
             // {
             //     itemId: 'OrgToStore',
@@ -443,6 +445,7 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                         }
                     }
                 },
+                enableKeyEvents : true
             },
             {
                 itemId: 'productString',
@@ -453,6 +456,7 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                     value: '{searchObj.product}',
                 },
                 margin: 3,
+                enableKeyEvents : true
             },
             {
                 itemId: 'maNplString',
@@ -463,6 +467,7 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                     value: '{searchObj.maNpl}',
                 },
                 margin: 3,
+                enableKeyEvents : true
             },
             {
                 itemId: 'lotnumberString',
@@ -473,6 +478,7 @@ Ext.define('GSmartApp.view.stockout.Stockout_M_List', {
                     value: '{searchObj.lotnumber}',
                 },
                 margin: 3,
+                enableKeyEvents : true
             },
             {
                 tooltip: 'Tìm phiếu xuất',

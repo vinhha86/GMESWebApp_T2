@@ -395,7 +395,8 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                 bind: {
                     value: '{searchObj.stockindate_from}',
                     hidden: '{isAdd_Pcontract_Stockin}'
-                }
+                },
+                enableKeyEvents : true
             }, 
             {
                 itemId: 'stockindate_to',
@@ -409,7 +410,8 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                 bind: {
                     value: '{searchObj.stockindate_to}',
                     hidden: '{isAdd_Pcontract_Stockin}'
-                }
+                },
+                enableKeyEvents : true
             },        
             {
                 itemId: 'OrgFromStore',
@@ -426,6 +428,7 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                 displayField: 'name',
                 valueField: 'id',
                 // flex: 1,
+                enableKeyEvents : true
             },      
             // {
             //     itemId: 'OrgToStore',
@@ -456,6 +459,7 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                 displayField: 'name',
                 valueField: 'id',
                 // flex: 1,
+                enableKeyEvents : true
             },
             {
                 itemId: 'pcontractString',
@@ -467,6 +471,7 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                     hidden: '{isAdd_Pcontract_Stockin}',
                 },
                 margin: 3,
+                enableKeyEvents : true
             },
             {
                 itemId: 'productString',
@@ -478,6 +483,7 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                     hidden: '{isAdd_Pcontract_Stockin}',
                 },
                 margin: 3,
+                enableKeyEvents : true
             },
             {
                 // width: 100,
@@ -489,6 +495,7 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List', {
                 bind: {
                     hidden: '{isAdd_Pcontract_Stockin}'
                 }
+                
             }
         ]
     },

@@ -64,7 +64,31 @@ Ext.define('GSmartApp.view.stockin.stockin_material.Stockin_M_List_Main_Controll
         '#Stockin_M_List': {
             select: 'onStockinSelect',
             itemdblclick: 'onCapNhatdbl',
-        },        
+        },  
+        '#pcontractString': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#productString': {
+            keypress: 'ontxtfieldkeypress'
+        },   
+        '#stockintypeid_link': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#OrgFromStore': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#stockindate_to': {
+            keypress: 'ontxtfieldkeypress'
+        },
+        '#stockindate_from': {
+            keypress: 'ontxtfieldkeypress'
+        }
+    },
+    ontxtfieldkeypress: function(field, e) {
+        var m =this;
+        if(e.getKey() == e.ENTER) {
+            m.onSearch();
+        }
     },
     onStockinSelect: function (e, selected, eOpts) {
         var viewmodel = this.getViewModel();

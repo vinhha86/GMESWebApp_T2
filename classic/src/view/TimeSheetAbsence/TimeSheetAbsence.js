@@ -137,21 +137,24 @@ Ext.define('GSmartApp.view.TimeSheetAbsence.TimeSheetAbsence', {
             queryMode: 'local',
             anyMatch: true,
             margin: '5 1 5 0',
-            width: 120
+            width: 120,
+            enableKeyEvents : true
         }, {
             xtype: 'textfield',
             labelWidth: 0,
             margin: '5 1 5 0',
             emptyText: "Mã nhân viên",
             itemId: 'personnelCode',
-            width: 120
+            width: 120,
+            enableKeyEvents : true
         }, {
             xtype: 'textfield',
             labelWidth: 0,
             margin: '5 1 5 0',
             emptyText: "Họ tên",
             itemId: 'personnelName',
-            width: 140
+            width: 140,
+            enableKeyEvents : true
         }, {
             xtype: 'datefield',
             labelWidth: 0,
@@ -166,6 +169,7 @@ Ext.define('GSmartApp.view.TimeSheetAbsence.TimeSheetAbsence', {
             bind: {
                 value: '{timesheetabsence.fromdate}',
             },
+            enableKeyEvents : true
         }, {
             xtype: 'datefield',
             labelWidth: 0,
@@ -180,6 +184,7 @@ Ext.define('GSmartApp.view.TimeSheetAbsence.TimeSheetAbsence', {
             bind: {
                 value: '{timesheetabsence.todate}',
             },
+            enableKeyEvents : true
         }, {
             xtype: 'combo',
             labelWidth: 0,
@@ -193,7 +198,8 @@ Ext.define('GSmartApp.view.TimeSheetAbsence.TimeSheetAbsence', {
             queryMode: 'local',
             anyMatch: true,
             margin: '5 1 5 0',
-            width: 150
+            width: 150,
+            enableKeyEvents : true
         }, {
             xtype: 'button',
             margin: '5 1 5 1',
