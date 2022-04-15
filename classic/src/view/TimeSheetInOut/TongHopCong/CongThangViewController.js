@@ -84,27 +84,7 @@ Ext.define('GSmartApp.view.TimeSheetInOut.TongHopCong.CongThangViewController', 
             this.NameFilter = null;
         }
     },
-    onExport: function () {
-        var viewmodel = this.getViewModel();
-        var grid = this.getView();
 
-        var month = viewmodel.get('timesheetmonth.month');
-        var year = viewmodel.get('timesheetmonth.year');
-        var donvi = grid.down('#cmbDonVi').getRawValue();
-        var bophan = grid.down('#cmbBoPhan').getRawValue();
-
-        var cfg = Ext.merge({
-            title: donvi + "-" + bophan + " Tháng " + month + " năm " + year,
-            fileName: donvi + "-" + bophan + " Tháng " + month + " năm " + year + '.' + "xlsx"
-        }, {
-            type: 'excel07',
-            ext: 'xlsx',
-            includeGroups: false,
-            includeSummary: false
-        });
-
-        grid.saveDocumentAs(cfg);
-    },
     onCalculate: function () {
         var me = this;
         var grid = this.getView();

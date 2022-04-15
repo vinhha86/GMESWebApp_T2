@@ -50,6 +50,7 @@ Ext.define('GSmartApp.view.Vendor.VendorDetailViewController', {
                 if (success) {
                     var response = Ext.decode(response.responseText);
                     if (response.respcode == 200) {
+                        
                         Ext.Msg.show({
                             title: 'Thông báo',
                             msg: 'Lưu thành công',
@@ -68,6 +69,7 @@ Ext.define('GSmartApp.view.Vendor.VendorDetailViewController', {
                         if(thisBtn.itemId=='btnLuuVaTaoMoi')
                             me.Id = 0;
                         m.redirectTo("lsvendor/" + me.Id + "/edit");
+                        viewModel.set('currentRec',null);
                     }
                     else {
                         Ext.Msg.show({

@@ -46,7 +46,10 @@ Ext.define('GSmartApp.store.pcontract.PContractStore', {
 		this.load();
 	},
 	loadStore: function (productbuyer_code, po_code, orgbuyerid_link, orgvendorid_link,
-		contractbuyer_code, contractbuyer_yearfrom, contractbuyer_yearto) {
+		contractbuyer_code, contractbuyer_yearfrom, contractbuyer_yearto,firstday_month,lastday_month) {
+		// loadStore: function (productbuyer_code, po_code, orgbuyerid_link, orgvendorid_link,
+		// 	contractbuyer_code, contractbuyer_yearfrom, contractbuyer_yearto) {
+			
 		var me = this;
 		var params = new Object();
 		params.productbuyer_code = productbuyer_code;
@@ -56,6 +59,8 @@ Ext.define('GSmartApp.store.pcontract.PContractStore', {
 		params.contractbuyer_code = contractbuyer_code;
 		params.contractbuyer_yearfrom = contractbuyer_yearfrom;
 		params.contractbuyer_yearto = contractbuyer_yearto;
+		params.firstDayOfMonth_shipDate = firstday_month;
+		params.lastDayOfMonth_shipDate = lastday_month;
 		this.setProxy({
 			type: 'ajax',
 			actionMethods: {

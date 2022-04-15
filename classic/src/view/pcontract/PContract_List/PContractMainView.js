@@ -12,6 +12,9 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
         columnLines: true,
         rowLines: true
     },
+    // viewmodel: {
+    //     type: 'PContractMainViewModel'
+    // },
     bind: {
         store: '{PContractStore}'
     },
@@ -194,6 +197,14 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
         {
             xtype: 'combo',
             labelWidth: 0,
+            matchFieldWidth: false,
+                listConfig: {
+                    listeners: {
+                        beforeshow: function(picker) {
+                            picker.minWidth = picker.up('combobox').getSize().width;
+                        }
+                    }
+                },
             emptyText: 'Buyer',
             bind: {
                 store: '{EndBuyer}',
@@ -203,6 +214,7 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
             displayField: 'code',
             queryMode: 'local',
             anyMatch: true,
+            width: 120,
             itemId: 'orgbuyerid_link',
             margin: '5 1 5 0',
 			enableKeyEvents : true,
@@ -210,6 +222,14 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
         {
             xtype: 'combo',
             labelWidth: 0,
+            matchFieldWidth: false,
+                listConfig: {
+                    listeners: {
+                        beforeshow: function(picker) {
+                            picker.minWidth = picker.up('combobox').getSize().width;
+                        }
+                    }
+                },
             emptyText: 'Vendor',
             bind: {
                 store: '{Vendor}',
@@ -219,6 +239,7 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
             displayField: 'name',
             queryMode: 'local',
             anyMatch: true,
+            width: 120,
             itemId: 'orgvendorid_link',
             margin: '5 1 5 0',
 			enableKeyEvents : true,
@@ -228,7 +249,7 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
             margin: '5 1 5 0',
             emptyText: "Số HĐ",
             itemId: 'contractbuyer_code',
-            width: 120,
+            width: 100,
             bind: {
                 value: '{value.contractbuyer_code}'
             },
@@ -259,6 +280,36 @@ Ext.define('GSmartApp.view.pcontract.PContractMainView', {
                 value: '{value.contractbuyer_yearto}'
             },
 			enableKeyEvents : true,
+        },
+        {
+            xtype: 'textfield',
+            // fieldLabel: 'Tháng',
+            emptyText: "Tháng giao hàng",
+            margin: '5 1 5 0',
+            maskRe: /[0-9]/,
+            maxLength: 2,
+            itemId: 'month',
+            bind: {
+                value: '{value.month}'
+            },
+            enableKeyEvents : true,
+            labelWidth: 50,
+            width: 120
+        },
+        {
+            xtype: 'textfield',
+            // fieldLabel: 'Năm',
+            emptyText: "Năm giao hàng",
+            margin: '5 1 5 0',
+            maskRe: /[0-9]/,
+            maxLength: 4,
+            itemId: 'year',
+            bind: {
+                value: '{value.year}'
+            },
+            enableKeyEvents : true,
+            labelWidth: 50,
+            width: 120
         },
         {
             xtype: 'button',

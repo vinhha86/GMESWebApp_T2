@@ -201,6 +201,7 @@ Ext.define('GSmartApp.view.baocao_ns.BaoCaoNS_View', {
             items: [
                 {
                     xtype: 'datefield',
+                    // xtype: 'calendar-monthview',
                     labelWidth: 50,
                     fieldLabel: 'Ngày:',
                     editable: false,

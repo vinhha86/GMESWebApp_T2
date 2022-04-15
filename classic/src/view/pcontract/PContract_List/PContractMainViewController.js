@@ -77,6 +77,12 @@ Ext.define('GSmartApp.view.pcontract.PContractMainViewController', {
         '#contractbuyer_yearto': {
             keypress: 'onPressEnterSearch',
         },
+        '#month': {
+            keypress: 'onPressEnterSearch',
+        },
+        '#year': {
+            keypress: 'onPressEnterSearch',
+        }
     },
     onActivate: function () {
         var me = this;
@@ -121,6 +127,12 @@ Ext.define('GSmartApp.view.pcontract.PContractMainViewController', {
         var contractbuyer_code = me.down('#contractbuyer_code').getValue();
         var contractbuyer_yearfrom = me.down('#contractbuyer_yearfrom').getValue();
         var contractbuyer_yearto = me.down('#contractbuyer_yearto').getValue();
+        var month = me.down('#month').getValue();
+        var year = me.down('#year').getValue();
+        // console.log(month);
+        // console.log(year);
+        // console.log(contractbuyer_yearfrom);
+        
 
         if (productbuyer_code == null) {
             productbuyer_code = "";
@@ -149,10 +161,67 @@ Ext.define('GSmartApp.view.pcontract.PContractMainViewController', {
         if (contractbuyer_yearto == null) {
             contractbuyer_yearto = "";
         }
+        if ((month != "" && year!="")) {
+              if (month <= 12 && month >= 0){
+                if(month == 1 || month ==3 || month ==5 || month ==7 || month ==9 || month ==11){
+                    var firstday_month = year+"-"+month + "-" + "1";
+                    var lastday_month = year+"-"+month + "-" + "31";   
+                }
+                else if(month == 4 || month ==6 || month ==8 || month ==10 || month ==12 ){
+                    var firstday_month = year+"-"+month + "-" + "1";
+                    var lastday_month = year+"-"+month + "-" + "30";  
+                }
+                else if(month == 2 && year%4==0 ) {
+                    var firstday_month = year+"-"+month + "-" + "1";
+                    var lastday_month = year+"-"+month + "-" + "29"; 
+                }
+                else {
+                    var firstday_month = year+"-"+month + "-" + "1";
+                    var lastday_month = year+"-"+month + "-" + "28"; 
+                }
+                console.log(firstday_month);
+                console.log(lastday_month);
+              }
+              else {
+                Ext.MessageBox.show({
+                    title: "Thông báo",
+                    msg: 'Vui lòng nhập tháng từ 1 đến 12',
+                    buttons: Ext.MessageBox.YES,
+                    buttonText: {
+                        yes: 'Đóng',
+                    }
+                });
+              }
+        }
+        else if (month == "" && year != ""){
+            Ext.MessageBox.show({
+                title: "Thông báo",
+                msg: 'Vui lòng nhập tháng để tìm kiếm',
+                buttons: Ext.MessageBox.YES,
+                buttonText: {
+                    yes: 'Đóng',
+                }
+            });
+        }
+        else if (month != "" && year == ""){
+            Ext.MessageBox.show({
+                title: "Thông báo",
+                msg: 'Vui lòng nhập năm để tìm kiếm',
+                buttons: Ext.MessageBox.YES,
+                buttonText: {
+                    yes: 'Đóng',
+                }
+            });
+        }
+        else {
+            var firstday_month = "";
+            var lastday_month = "";
+        }
 
         PContractStore.loadStore(productbuyer_code, po_code, orgbuyerid_link,
             orgvendorid_link, contractbuyer_code,
-            contractbuyer_yearfrom, contractbuyer_yearto);
+            contractbuyer_yearfrom, contractbuyer_yearto,firstday_month, lastday_month);
+            // firstday_month, lastday_month
         var PContractPOList = viewmodel.getStore('PContractPOList');
         PContractPOList.removeAll();
         me.getSelectionModel().deselectAll();

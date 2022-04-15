@@ -33,7 +33,7 @@ Ext.define('GSmartApp.view.vendor.VendorViewController', {
         var me = this.getView();
         var Id = 0;
 
-        this.redirectTo("lsvendor/create");
+        this.redirectTo("lsvendor/0/edit");
     },
     onCapNhatdbl: function (m, record, item, index, e, eOpts) {
         var id = record.data.id;
