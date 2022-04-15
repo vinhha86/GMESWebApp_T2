@@ -339,8 +339,19 @@ Ext.define('GSmartApp.view.personel.Personnel_info', {
                         bind: {
                             value: '{personnel.account_number}'
                         }
-                    },
-                    {
+                    }, {
+                        xtype: 'textfield',
+                        labelWidth: 78,
+                        fieldLabel: 'Tên ngân hàng',
+                        labelStyle: "font-size:11px;padding: 5px 0px 0px 2px;",
+                        fieldStyle: 'font-size:11px;',
+                        flex: 1,
+                        margin: 1,
+                        ///
+                        bind: {
+                            value: '{personnel.bankname}'
+                        }
+                    }, {
                         xtype: 'combo',
                         labelWidth: 78,
                         fieldLabel: 'Loại NV (' + '<span style="color:red">*</span>' + ')',
@@ -486,6 +497,21 @@ Ext.define('GSmartApp.view.personel.Personnel_info', {
                         margin: 1,
                         bind: {
                             value: '{personnel.household_number}'
+                        }
+                    },
+                    {
+                        xtype: 'datefield',
+                        labelStyle: "font-size:11px;padding: 5px 0px 0px 2px;",
+                        fieldStyle: 'font-size:11px;',
+                        fieldLabel: 'Ngày đóng BH:',
+                        labelAlign: 'left',
+                        labelWidth: 78,
+                        flex: 1,
+                        margin: 1,
+                        format: 'd/m/Y',
+                        altFormats: "Y-m-d\\TH:i:s.uO",
+                        bind: {
+                            value: '{personnel.date_household_grant}'
                         }
                     }, {
                         xtype: 'datefield',
