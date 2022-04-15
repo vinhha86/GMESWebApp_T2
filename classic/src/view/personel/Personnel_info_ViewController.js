@@ -22,7 +22,6 @@ Ext.define('GSmartApp.view.personel.Personnel_info_ViewController', {
       }
       var OrgStore = viewmodel.getStore('OrgStore');
       OrgStore.getbyParentandType(orgmanagerid_link, listid);
-
     }
 
     var OrgCountryStore = viewmodel.getStore('OrgCountryStore');
@@ -47,6 +46,8 @@ Ext.define('GSmartApp.view.personel.Personnel_info_ViewController', {
     viewmodel.set('NgayVaoCty.old', viewmodel.get('personnel.date_startworking'));
     viewmodel.set('TGCongTac.old', viewmodel.get('personnel.time_work'));
 
+    viewmodel.set('TGCapHoKhau.old', viewmodel.get('personnel.date_household_grant'));
+    viewmodel.set('Bank.old', viewmodel.get('personnel.bankname'));
   },
   control: {
     '#cmbDonViQuanLy': {
@@ -84,6 +85,9 @@ Ext.define('GSmartApp.view.personel.Personnel_info_ViewController', {
     },
     '#TrangThai': {
       change: 'onTrangThai'
+    },
+    '#bankName': {
+      change: 'onBankName',
     }
   },
 
@@ -336,6 +340,14 @@ Ext.define('GSmartApp.view.personel.Personnel_info_ViewController', {
       viewmodel.set('personnel.village', null);
     } else {
       viewmodel.set('personnel.village', viewmodel.get('Thon.old'));
+    }
+  },
+  onBankName: function(combo, newvalue, oldValue, e) {
+    var viewmodel = this.getViewModel();
+    if (newvalue == null) {
+      viewmodel.set('personnel.bankname', null)
+    } else {
+      viewmodel.set('personnel.bankname', newvalue);
     }
   }
 })

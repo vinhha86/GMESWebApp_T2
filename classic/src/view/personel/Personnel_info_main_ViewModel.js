@@ -73,6 +73,12 @@ Ext.define('GSmartApp.view.personel.Personnel_info_main_ViewModel', {
         },
         TGCongTac:{
             old:null
+        },
+        TGCapHoKhau: {
+            old:null
+        },
+        Bank: {
+            old: null
         }
     },
     formulas: {
