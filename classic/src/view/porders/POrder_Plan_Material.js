@@ -12,7 +12,7 @@ Ext.define('GSmartApp.view.porders.POrder_Plan_Material', {
         store: '{POrder_Plan_MaterialStore}'
     },
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
     },                  
     columns: [

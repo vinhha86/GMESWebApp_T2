@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.invoice.invoice_pcontractlist.invoice_pcontractlist',
     },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

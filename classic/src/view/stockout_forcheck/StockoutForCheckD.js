@@ -17,7 +17,7 @@ Ext.define('GSmartApp.view.stockout.StockoutForCheckD', {
         dock: 'bottom'
     }],  
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
     },                  
     columns: [

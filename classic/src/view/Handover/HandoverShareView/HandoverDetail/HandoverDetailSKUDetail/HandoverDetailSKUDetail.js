@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.handover.HandoverDetailSKUDetail', {
     },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

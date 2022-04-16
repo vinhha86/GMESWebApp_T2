@@ -5,7 +5,7 @@ Ext.define('GSmartApp.view.cut_plan.warehouse.WareHouse_View', {
     controller: 'WareHouse_ViewController',
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
         plugins: {

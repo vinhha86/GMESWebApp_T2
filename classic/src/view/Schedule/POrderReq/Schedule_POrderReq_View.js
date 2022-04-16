@@ -10,7 +10,7 @@ Ext.define('GSmartApp.view.Schedule.POrderReq.Schedule_POrderReq_View', {
     ],
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,   
         plugins: {
@@ -156,7 +156,7 @@ Ext.define('GSmartApp.view.Schedule.POrderReq.Schedule_POrderReq_View', {
                 xtype: 'grid',
                 viewConfig: {
                     stripeRows: false,
-                    enableTextSelection: false,
+                    enableTextSelection: true,
                     columnLines: true,
                     rowLines: true,   
                     plugins: {

@@ -8,7 +8,7 @@ Ext.define('GSmartApp.view.pcontract.PContractPair_ProductNotInSet', {
     //     type: 'PContractViewModel'
     // },
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
         plugins: {

@@ -40,7 +40,7 @@ Ext.define('GSmartApp.view.porders.POrderList.SewingCost.PorderSewingCost_View',
         },
     ],
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
         rowLines: true,
         columnLines: true

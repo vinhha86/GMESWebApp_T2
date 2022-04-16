@@ -14,7 +14,7 @@ Ext.define('GSmartApp.view.stockout.StockoutForCheckPklistSelect', {
     },
     flex: 1,
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
     },                  
     columns: [

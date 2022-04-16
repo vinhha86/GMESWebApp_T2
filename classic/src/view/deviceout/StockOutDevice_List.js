@@ -19,7 +19,7 @@ Ext.define('GSmartApp.view.deviceout.StockOutDevice_List', {
     },
     columnLines: true,
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false
     },
     columns: [

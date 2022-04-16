@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.stockout.stockout_material.Stockout_Pcontract.Stockou
     },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

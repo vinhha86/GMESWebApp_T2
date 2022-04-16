@@ -25,7 +25,7 @@ Ext.define('GSmartApp.view.stockout.StockoutForCheckReportDWindow', {
             bind: '{stockout_d.checkpklist}',
             width: 320,
             viewConfig: {
-                enableTextSelection: false,
+                enableTextSelection: true,
                 stripeRows: false,
             }, 
             features: [{
@@ -69,7 +69,7 @@ Ext.define('GSmartApp.view.stockout.StockoutForCheckReportDWindow', {
             bind: '{stockout_d.processedpklist}',
             flex: 1,
             viewConfig: {
-                enableTextSelection: false,
+                enableTextSelection: true,
                 stripeRows: false,
             }, 
             features: [{

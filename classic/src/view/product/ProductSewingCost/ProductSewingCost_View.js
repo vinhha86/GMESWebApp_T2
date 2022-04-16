@@ -43,7 +43,7 @@ Ext.define('GSmartApp.view.product.ProductSewingCost.ProductSewingCost_View', {
         },
     ],
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
         rowLines: true,
         columnLines: true
