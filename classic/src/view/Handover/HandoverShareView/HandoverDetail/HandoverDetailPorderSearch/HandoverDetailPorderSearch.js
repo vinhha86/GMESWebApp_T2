@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.handover.HandoverDetailPorderSearch', {
     // },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

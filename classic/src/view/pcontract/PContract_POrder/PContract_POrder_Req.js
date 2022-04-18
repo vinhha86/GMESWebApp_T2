@@ -4,7 +4,7 @@ Ext.define('GSmartApp.view.pcontract.PContract_POrder_Req', {
     id:'PContract_POrder_Req',
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

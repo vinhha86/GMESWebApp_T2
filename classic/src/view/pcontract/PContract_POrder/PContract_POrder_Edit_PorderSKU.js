@@ -3,7 +3,7 @@ Ext.define('GSmartApp.view.pcontract.PContract_POrder_Edit_PorderSKU', {
     xtype: 'PContract_POrder_Edit_PorderSKU',
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

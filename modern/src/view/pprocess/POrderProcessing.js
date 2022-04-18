@@ -74,7 +74,7 @@ Ext.define('GSmartApp.view.pprocess.POrderProcessing', {
         }],
         columnLines: true,
         // viewConfig: {
-        //     enableTextSelection: false,
+        //     enableTextSelection: true,
         //     stripeRows: false,
         //  },
         bind: {

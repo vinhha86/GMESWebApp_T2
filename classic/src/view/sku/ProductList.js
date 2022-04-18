@@ -23,7 +23,7 @@ Ext.define('GSmartApp.view.sku.ProductList', {
         dock: 'bottom'
     }],
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
     },
     columns: [

@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.cutplan_processing.CutplanProcessing_StockList', {
     },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },

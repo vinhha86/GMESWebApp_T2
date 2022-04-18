@@ -19,7 +19,7 @@ Ext.define('GSmartApp.view.sizeset.SizesetView', {
     },
     viewConfig: {
         stripeRows: true,
-        enableTextSelection: false,
+        enableTextSelection: true,
         scrollable: true,
         columnLines: true,
         rowLines: true,

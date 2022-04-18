@@ -17,7 +17,7 @@ Ext.define('GSmartApp.view.POrder_Balance.POrderBalance_Sort_View', {
     // },
     viewConfig: {
         stripeRows: true,
-        enableTextSelection: false,
+        enableTextSelection: true,
         scrollable: true,
         columnLines: true,
         rowLines: true,

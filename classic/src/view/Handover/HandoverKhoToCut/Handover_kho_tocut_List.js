@@ -20,7 +20,7 @@ Ext.define('GSmartApp.view.handover.Handover_kho_tocut_List', {
     },
     columnLines: true,
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false
     },
     columns: [

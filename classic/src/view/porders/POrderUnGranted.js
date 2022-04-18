@@ -25,7 +25,7 @@ Ext.define('GSmartApp.view.porders.POrderUnGranted', {
     }],
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
         plugins: {
@@ -176,7 +176,7 @@ Ext.define('GSmartApp.view.porders.POrderUnGranted', {
                 xtype: 'grid',
                 viewConfig: {
                     stripeRows: false,
-                    enableTextSelection: false,
+                    enableTextSelection: true,
                     columnLines: true,
                     rowLines: true,
                     plugins: {

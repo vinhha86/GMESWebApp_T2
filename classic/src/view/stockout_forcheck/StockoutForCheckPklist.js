@@ -33,7 +33,7 @@ Ext.define('GSmartApp.view.stockout.StockoutForCheckPklist', {
         dock: 'bottom'
     }],
     viewConfig: {
-        enableTextSelection: false,
+        enableTextSelection: true,
         stripeRows: false,
     },                  
     columns: [

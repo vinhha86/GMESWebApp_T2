@@ -9,7 +9,7 @@ Ext.define('GSmartApp.view.invoice.invoice_npl_search.invoice_productlist', {
     },
     viewConfig: {
         stripeRows: false,
-        enableTextSelection: false,
+        enableTextSelection: true,
         columnLines: true,
         rowLines: true,
     },
