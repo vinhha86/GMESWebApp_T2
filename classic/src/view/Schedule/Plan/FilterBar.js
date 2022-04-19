@@ -105,24 +105,28 @@ Ext.define('GSmartApp.view.Schedule.Plan.FilterBar', {
             weight: 30,
             // fieldLabel: 'Bắt đầu',
             format: 'd/m/y',
+            itemId : 'startDate',
             altFormats: "Y-m-d\\TH:i:s.uO",
             labelWidth: 60,
             width: 125,
             bind: {
                 value: '{schedule.startDate}'
-            }
+            },
+            enableKeyEvents : true,
         },
         {
             xtype: 'datefield',
             weight: 30,
             // fieldLabel: 'Kết thúc',
+            itemId : 'endDate',
             format: 'd/m/y',
             altFormats: "Y-m-d\\TH:i:s.uO",
             labelWidth: 60,
             width: 125,
             bind: {
                 value: '{schedule.endDate}'
-            }
+            },
+            enableKeyEvents : true,
         },
         // {
         //     xtype: 'textfield',
@@ -136,18 +140,21 @@ Ext.define('GSmartApp.view.Schedule.Plan.FilterBar', {
             xtype: 'textfield',
             clearable: true,
             emptyText: 'PO Line',
+            itemId: 'filterPOline',
             width: 130,
             bind: {
                 value: '{schedule.PO}'
-            }
+            },
+            enableKeyEvents : true,
         },
         {
             xtype: 'button',
             tooltip: 'Tìm kiếm',
             // text: 'Zoom in',
+            itemId: 'btnTimKiem',
             iconCls: 'x-fa fa-search',
             weight: 30,
-            handler: 'onSearch'
+            // handler: 'onSearch'
         }, {
             xtype: 'checkbox',
             hidden: true,
@@ -191,11 +198,13 @@ Ext.define('GSmartApp.view.Schedule.Plan.FilterBar', {
         {
             xtype: 'FilterFieldPorder',
             id: 'FilterFieldPorder',
+            // itemId:'filterFieldPorder',
             emptyText: 'Mã sản phẩm',
             // fieldLabel: 'PO:',
             labelWidth: 30,
             width: 140,
-            property: 'productbuyercode'
+            property: 'productbuyercode',
+            // enableKeyEvents : true
         }
     ]
 })

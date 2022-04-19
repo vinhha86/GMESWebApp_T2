@@ -17,7 +17,22 @@ Ext.define('GSmartApp.view.Schedule.Plan.FilterBar_Controller', {
         },
         '#hideView': {
             click: 'onHideView'
-        }
+        },
+        '#btnTimKiem': {
+            click: 'onSearch'
+        },
+        '#filterPOline': {
+            keypress: 'onPressEnterSearch'
+        },
+        '#startDate': {
+            keypress: 'onPressEnterSearch'
+        },
+        '#endDate': {
+            keypress: 'onPressEnterSearch'
+        },
+        // '#filterFieldPorder': {
+        //     keypress: 'onPressEnterSearch',
+        // }
     },
     onHideView: function () {
         var grid = this.getView();
@@ -293,5 +308,12 @@ Ext.define('GSmartApp.view.Schedule.Plan.FilterBar_Controller', {
 
         var west_salaryfund = panel_po.down('#panel_salaryfund');
         west_salaryfund.setHidden(!west_salaryfund.getHidden());
-    }
+    },
+    onPressEnterSearch: function (textfield, e, eOpts) {
+		var m = this;
+		if (e.getKey() == e.ENTER) {
+			// Ext.Msg.alert('Keys','You pressed the Enter key');
+			m.onSearch();
+		}
+	},
 })
